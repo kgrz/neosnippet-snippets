@@ -147,6 +147,21 @@ snippet jsc
 options head
   console.log(JSON.stringify(${1:TARGET}, null, 2));
 
+snippet     ctor
+abbr        constructor() {}
+options     head
+  constructor(${1}) {
+    ${0:TARGET}
+  }
+
+snippet     rtor
+abbr        constructor(props) { super(props) }
+options     head
+  constructor(props${1}) {
+    super(props);
+    ${0:TARGET}
+  }
+
 snippet     class
 abbr        class {...}
 options     head
@@ -163,6 +178,23 @@ options     head
     constructor(${3:#:ARGS}) {
       ${0:TARGET}
     }
+  }
+
+snippet     react-class-component
+abbr        class A extends React.Component {...}
+options     head
+  class ${1:#:NAME} extends React.Component {
+    constructor(props${2}) {
+      super(props);
+      ${0:TARGET}
+    }
+  }
+
+snippet     react-fn-component
+abbr        const Component = props => {}
+options     head
+  const ${1:#:Component} = props => {
+    ${0:TARGET}
   }
 
 snippet     static

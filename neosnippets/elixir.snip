@@ -100,3 +100,13 @@ options     head
     describe "${1:describe_name}" do
       ${2:TARGET}
     end
+
+snippet     pry
+abbr        IEx.pry
+options     head
+    require IEx; IEx.pry
+
+snippet     p
+abbr        IO.puts(:stdio)
+options     head
+    IO.puts(:stdio, ${1:TARGET})
